@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ToDoApps</name>
+    </assembly>
+    <members>
+        <member name="T:ToDoApps.ViewModels.ToDoViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="F:ToDoApps.ViewModels.ToDoViewModel.addTaskCommand">
+            <summary>The backing field for <see cref="P:ToDoApps.ViewModels.ToDoViewModel.AddTaskCommand"/>.</summary>
+        </member>
+        <member name="P:ToDoApps.ViewModels.ToDoViewModel.AddTaskCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:ToDoApps.ViewModels.ToDoViewModel.AddTask"/>.</summary>
+        </member>
+        <member name="F:ToDoApps.ViewModels.ToDoViewModel.toggleSelesaiCommand">
+            <summary>The backing field for <see cref="P:ToDoApps.ViewModels.ToDoViewModel.ToggleSelesaiCommand"/>.</summary>
+        </member>
+        <member name="P:ToDoApps.ViewModels.ToDoViewModel.ToggleSelesaiCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:ToDoApps.ViewModels.ToDoViewModel.ToggleSelesai(ToDoApps.Models.ToDoItem)"/>.</summary>
+        </member>
+        <member name="F:ToDoApps.ViewModels.ToDoViewModel.filterTasksCommand">
+            <summary>The backing field for <see cref="P:ToDoApps.ViewModels.ToDoViewModel.FilterTasksCommand"/>.</summary>
+        </member>
+        <member name="P:ToDoApps.ViewModels.ToDoViewModel.FilterTasksCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:ToDoApps.ViewModels.ToDoViewModel.FilterTasks"/>.</summary>
+        </member>
+        <member name="F:ToDoApps.ViewModels.ToDoViewModel.saveEditCommand">
+            <summary>The backing field for <see cref="P:ToDoApps.ViewModels.ToDoViewModel.SaveEditCommand"/>.</summary>
+        </member>
+        <member name="P:ToDoApps.ViewModels.ToDoViewModel.SaveEditCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:ToDoApps.ViewModels.ToDoViewModel.SaveEdit"/>.</summary>
+        </member>
+        <member name="T:ToDoApps.Resource">
+            <summary>
+            Android Resource Designer class.
+            Exposes the Android Resource designer assembly into the project Namespace.
+            </summary>
+        </member>
+    </members>
+</doc>

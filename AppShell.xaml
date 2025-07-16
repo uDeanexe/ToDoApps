@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="ToDoApps.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ToDoApps"
+    xmlns:views="clr-namespace:ToDoApps.Views"
+    Title="ToDoApps">
+
+    <ShellContent
+        Title="Menu Utama"
+        ContentTemplate="{DataTemplate views:MainMenuPage}"
+        Route="MainMenuPage" />
+    <ShellContent
+        Title="Daftar Tugas"
+        ContentTemplate="{DataTemplate views:ToDoListPage}"
+        Route="ToDoListPage" />
+    <ShellContent
+        Title="Detail Tugas"
+        ContentTemplate="{DataTemplate views:ToDoDetailPage}"
+        Route="ToDoDetailPage" />
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate views:MainMenuPage}"
+        Route="MainPage" />
+
+</Shell>

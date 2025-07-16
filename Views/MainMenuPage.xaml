@@ -1,0 +1,17 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToDoApps.Views.MainMenuPage"
+             BackgroundColor="#F5F6FA">
+    <Grid RowDefinitions="Auto,*" ColumnDefinitions="*">
+        <VerticalStackLayout Spacing="12" Padding="0,60,0,0" HorizontalOptions="Center" VerticalOptions="Start">
+            <Label Text="ToDo Apps" FontSize="40" FontAttributes="Bold" TextColor="#22223B" HorizontalOptions="Center"/>
+            <Label Text="Kelola tugas harianmu dengan mudah dan nyaman" FontSize="18" TextColor="#4A4E69" HorizontalOptions="Center"/>
+        </VerticalStackLayout>
+        <Frame Grid.Row="1" Margin="0,40,0,0" Padding="32" BackgroundColor="#FFFFFF" CornerRadius="32" HasShadow="True" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="350">
+            <VerticalStackLayout Spacing="24">
+                <Button Text="Lihat Daftar Tugas" FontSize="22" CornerRadius="18" BackgroundColor="#9A8C98" TextColor="White" Padding="18,10" Clicked="OnLihatDaftarTugasClicked"/>
+                <Button Text="Pengaturan" FontSize="22" CornerRadius="18" BackgroundColor="#C9ADA7" TextColor="#22223B" Padding="18,10"/>
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
+</ContentPage> 

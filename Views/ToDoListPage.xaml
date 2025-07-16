@@ -1,0 +1,40 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:ToDoApps.ViewModels"
+             xmlns:models="clr-namespace:ToDoApps.Models"
+             x:Class="ToDoApps.Views.ToDoListPage"
+             x:DataType="viewmodels:ToDoViewModel"
+             BackgroundColor="#F5F6FA">
+    <ContentPage.BindingContext>
+        <viewmodels:ToDoViewModel />
+    </ContentPage.BindingContext>
+    <VerticalStackLayout Spacing="16" Padding="24,40,24,24">
+        <Label Text="Daftar Tugas" FontSize="32" FontAttributes="Bold" TextColor="#22223B" HorizontalOptions="Center"/>
+        <Entry Placeholder="Judul tugas baru" Text="{Binding NewJudul}" FontSize="18"/>
+        <Entry Placeholder="Deskripsi" Text="{Binding NewDeskripsi}" FontSize="16"/>
+        <DatePicker Date="{Binding NewTanggal}"/>
+        <Picker Title="Prioritas" ItemsSource="{Binding PrioritasList}" SelectedItem="{Binding NewPrioritas}"/>
+        <Picker Title="Kategori" ItemsSource="{Binding KategoriList}" SelectedItem="{Binding NewKategori}"/>
+        <Button Text="Tambah Tugas" Command="{Binding AddTaskCommand}" FontSize="18" BackgroundColor="#9A8C98" TextColor="White"/>
+        <SearchBar Placeholder="Cari tugas..." Text="{Binding SearchText}" SearchCommand="{Binding FilterTasksCommand}"/>
+        <Picker Title="Filter Kategori" ItemsSource="{Binding KategoriList}" SelectedItem="{Binding FilterKategori}"/>
+        <CollectionView x:Name="ToDoCollectionView" ItemsSource="{Binding FilteredToDoList}" SelectionMode="Single" SelectionChanged="OnSelectionChanged">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:ToDoItem">
+                    <Border Margin="0,8" Padding="12" BackgroundColor="#fff" StrokeShape="RoundRectangle 16">
+                        <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto">
+                            <Label Text="{Binding Judul}" FontSize="20" FontAttributes="Bold" TextColor="#22223B"/>
+                            <Label Text="{Binding Tanggal, StringFormat='{}{0:dd MMM yyyy}'}" FontSize="14" TextColor="#4A4E69" Grid.Column="1"/>
+                            <Label Text="{Binding Deskripsi}" FontSize="16" TextColor="#4A4E69" Grid.Row="1" Grid.ColumnSpan="2"/>
+                            <Label Text="{Binding Kategori}" FontSize="14" TextColor="#9A8C98" Grid.Row="2"/>
+                            <HorizontalStackLayout Grid.Row="2" Grid.ColumnSpan="2" Spacing="8">
+                                <Button Text="Selesai" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:ToDoViewModel}}, Path=ToggleSelesaiCommand}" CommandParameter="{Binding .}" FontSize="14" BackgroundColor="#A3E635" TextColor="#22223B"/>
+                                <Button Text="Hapus" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:ToDoViewModel}}, Path=RemoveTaskCommand}" CommandParameter="{Binding .}" FontSize="14" BackgroundColor="#EF4444" TextColor="White"/>
+                            </HorizontalStackLayout>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage> 

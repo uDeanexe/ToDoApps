@@ -1,0 +1,21 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:ToDoApps.ViewModels"
+             x:Class="ToDoApps.Views.ToDoDetailPage"
+             x:DataType="viewmodels:ToDoViewModel"
+             BackgroundColor="#F5F6FA">
+    <ContentPage.BindingContext>
+        <viewmodels:ToDoViewModel />
+    </ContentPage.BindingContext>
+    <VerticalStackLayout Spacing="20" Padding="24,40,24,24">
+        <Label Text="Detail Tugas" FontSize="32" FontAttributes="Bold" TextColor="#22223B" HorizontalOptions="Center"/>
+        <Entry Placeholder="Judul" Text="{Binding SelectedItem.Judul}" FontSize="20"/>
+        <Editor Placeholder="Deskripsi" Text="{Binding SelectedItem.Deskripsi}" FontSize="16" HeightRequest="100"/>
+        <DatePicker Date="{Binding SelectedItem.Tanggal}"/>
+        <Picker Title="Prioritas" ItemsSource="{Binding PrioritasList}" SelectedItem="{Binding SelectedItem.Prioritas}"/>
+        <Picker Title="Kategori" ItemsSource="{Binding KategoriList}" SelectedItem="{Binding SelectedItem.Kategori}"/>
+        <Switch IsToggled="{Binding SelectedItem.Selesai}"/>
+        <Button Text="Simpan Perubahan" Command="{Binding SaveEditCommand}" FontSize="18" BackgroundColor="#9A8C98" TextColor="White"/>
+        <Button Text="Kembali" Clicked="OnBackClicked" FontSize="18" BackgroundColor="#C9ADA7" TextColor="#22223B"/>
+    </VerticalStackLayout>
+</ContentPage>
